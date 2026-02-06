@@ -1,0 +1,10 @@
+body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+            transition: background-color 0.3s ease; /* 色の変化をふわっとさせる */
+        }
