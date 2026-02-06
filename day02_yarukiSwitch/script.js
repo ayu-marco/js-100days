@@ -44,7 +44,7 @@ function updateLastRecord(sec) {
   const minutes = Math.floor(sec / 60);
   const remainingSeconds = sec % 60;
   const formattedSeconds = remainingSeconds.toString().padStart(2, "0");
-  lastRecord.textContent = `前回：${minutes}:${sec.toString().padStart(2, "0")}`;
+  lastRecord.textContent = `前回：${minutes}:${formattedSeconds}`;
 }
 
 function updateUI() {
