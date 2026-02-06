@@ -1,0 +1,18 @@
+#bingo-board{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+}
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+.cell.selected{
+    background-color: aquamarine;
+}
