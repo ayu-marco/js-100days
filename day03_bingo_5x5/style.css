@@ -1,18 +1,29 @@
 #bingo-board{
+    font-family: "Arial Rounded MT Bold";
     display: grid;
     grid-template-columns: repeat(5, 100px);
-    grid-template-rows: repeat(5, 100px);
-    gap: 5px;
+    gap: 10px;
+    justify-content: center;
+    margin: 2rem auto;
+    background-color: #fffffe;
 }
 .cell{
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #333;
-    font-size: 24px;
+    border: 2px solid #272343;
+    font-size: 32px;
+    font-weight: bold;
     cursor: pointer;
-    background-color: #f0f0f0;
+    background-color: #fffffe;
+    transition: background-color 0.3s;
+    border-radius: 5px;
 }
 .cell.selected{
-    background-color: aquamarine;
+    background-color: #bae8e8;
+}
+.cell.bingo{
+    background-color: #ffd803;
 }

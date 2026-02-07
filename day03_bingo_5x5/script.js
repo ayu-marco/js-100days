@@ -28,7 +28,7 @@ for (let i = letters.length - 1; i > 0; i--) {
 // ビンゴ用lettersを２５個取得
 const bingoLetters = letters.slice(0, 25);
 // 真ん中はFREEにする
-bingoLetters[12] = "FREE";
+bingoLetters[12] = "★";
 
 // ビンゴ判定
 function checkBingo(){
@@ -36,13 +36,16 @@ function checkBingo(){
     let newBingo=false;
 
     bingoPatterns.forEach((pattern, index)=>{//patternはbingoPatternの要素、indexはbingoAchievedの番号
-        if(!bingoAchieved[index]){//あるパターンのビンゴがまだ出ていなければ
+      
+      
+      if(!bingoAchieved[index]){//あるパターンのビンゴがまだ出ていなければ
             const isBingo=pattern.every(i=>//.everyは配列のすべての要素が条件を満たすかを判定。
                 cells[i].classList.contains("selected")
             );
         if(isBingo){
             bingoAchieved[index]=true;//あるパターンのビンゴが出た、とフラグを立てて
             newBingo=true;//新しくビンゴが出たということにする
+            pattern.forEach(i=>cells[i].classList.add("bingo"));//ビンゴになったセルに色をつける
         } 
         }
     });
@@ -50,20 +53,21 @@ function checkBingo(){
     return newBingo;//新しくビンゴが出たかどうか
 };
 
-
-
-
-
 // cellを作り、letterを入れる
-bingoLetters.forEach((letter) => {
+bingoLetters.forEach((letter, index) => {
   const cell = document.createElement("div");
   cell.classList.add("cell");
   cell.textContent = letter;
+  
+  if(index===12){
+        cell.classList.add("bingo");
+        cell.classList.add("selected");
+      }  
 
   cell.addEventListener("click", () => {
     cell.classList.add("selected");
     if(checkBingo()){
-        alert("ビンゴ！");
+        alert("ビンゴ！🎉🎉🎉");
     }
   });
 
