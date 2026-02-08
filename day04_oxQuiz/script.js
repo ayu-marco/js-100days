@@ -43,16 +43,20 @@ const judge = document.getElementById("judge");
 const aCorrect = document.getElementById("answer-correct");
 const aText = document.getElementById("answer-comment");
 const next = document.getElementById("next-btn");
-const start=document.getElementById("start-btn");
+const start = document.getElementById("start-btn");
+const restart=document.getElementById("restart-btn");
 
 let currentStep = 0;
-let score=0;
+let score = 0;
 
-start.addEventListener("click", () =>{
-  currentStep=0;
+start.addEventListener("click", () => {
+  currentStep = 0;
+  score = 0;
+  document.getElementById("quiz").classList.remove("hidden");
+  document.getElementById("answer").classList.add("hidden");
   document.getElementById("quiz-screen").classList.remove("hidden");
-    document.getElementById("start-screen").classList.add("hidden");
-  
+  document.getElementById("start-screen").classList.add("hidden");
+  displayQuiz();
 });
 
 function correctAnswer(torf) {
@@ -63,7 +67,6 @@ function correctAnswer(torf) {
   }
 }
 
-
 function displayQuiz() {
   const currentQuiz = quizData[currentStep];
 
@@ -72,7 +75,7 @@ function displayQuiz() {
   correctAnswer(currentQuiz.correct);
   aText.textContent = currentQuiz.description;
 }
-displayQuiz();
+//displayQuiz();
 
 document.getElementById("true-btn").addEventListener("click", () => {
   checkAnswer(true);
@@ -101,11 +104,20 @@ next.addEventListener("click", () => {
     document.getElementById("quiz").classList.remove("hidden");
     document.getElementById("answer").classList.add("hidden");
     displayQuiz();
-  }else{
+  } else {
     alert("全問終了しました！");
-    document.getElementById("quiz-screen").classList.add("hidden");
-    document.getElementById("result-screen").classList.remove("hidden");
+    showResult();  
   }
 });
+function showResult(){
+  document.getElementById("quiz-screen").classList.add("hidden");
+    document.getElementById("result-screen").classList.remove("hidden");
 
+    const report=document.getElementById("scoreReport");
+    report.textContent=`${quizData.length}問中 ${score}問 正解！`;
+};
 
+restart.addEventListener("click", ()=>{
+  document.getElementById("result-screen").classList.add("hidden");
+    document.getElementById("start-screen").classList.remove("hidden");
+});
