@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="start-screen" class="screen">
+    <div id="start-screen" class="start screen">
       <h1>ネットリテラシークイズ</h1>
       <button id="start-btn">はじめる</button>
     </div>
@@ -21,8 +21,16 @@
           <p id="quiz-question"></p>
         </div>
         <div class="btn-box">
-          <button id="true-btn">o</button>
-          <button id="false-btn">x</button>
+          <button id="true-btn" class="ox">o</button>
+          <button id="false-btn" class="ox">x</button>
+        </div>
+        <div class="enemy">
+          <img src="images/hacker_cracker1_smile.png" id="e-thinking">
+
+        </div>
+        <div class="face">
+          <img src="images/ai_character08_think.png" id="thinking">
+
         </div>
       </div>      
         
@@ -33,7 +41,16 @@
           <p id="answer-comment"></p>
         </div>
         <div class="btn-box">
-          <button id="next-btn">=></button>
+          <button id="next-btn" class="next">次の問題へ</button>
+        </div>
+        <div class="enemy">
+          <img src="images/hacker_cracker3_cry.png" id="e-win">
+          <img src="images/hacker_cracker4_laugh.png" id="e-lose">
+        </div>
+        <div class="face">
+
+          <img src="images/ai_character04_laugh.png" id="win">
+          <img src="images/ai_character06_shock.png" id="lose">
         </div>
       </div>
 
