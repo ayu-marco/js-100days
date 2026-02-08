@@ -1,0 +1,54 @@
+.hidden{
+    display:none;
+}
+
+
+
+/*
+body{
+    font-family: "Arial Rounded MT Bold";
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #e3f6f5;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+h1{
+    text-align: center;
+    font-size: 70px;
+    margin: 50px;
+}
+#bingo-board{
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin: 2rem auto;
+    
+}
+.cell{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #272343;
+    font-size: 32px;
+    font-weight: normal;
+    cursor: pointer;
+    background-color: #fffffe;
+    transition: 0.3s;
+    border-radius: 5px;
+    
+}
+.cell.selected{
+    background-color: #bae8e8;
+    font-weight: bold;
+    font-size: 40px;
+}
+.cell.bingo{
+    background-color: #ffd803;
+}
+*/
