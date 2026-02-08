@@ -1,10 +1,54 @@
 const quizData=[
   {
     question:"日本で一番高い山は富士山である。",
-    correct:true
+    correct:true,
+    description:"日本で一番高い山は富士山です。"
   }
 ];
+const qNumber=document.getElementById("quiz-number");
+const qText=document.getElementById("quiz-question");
+const judge=document.getElementById("judge");
+const aCorrect=document.getElementById("answer-correct");
+const aText=document.getElementById("answer-comment");
 
+let currentStep=0;
+
+function correctAnswer(torf){
+  if(torf){
+    aCorrect.textContent="正解は○";
+  }else{
+    aCorrect.textContent="正解は×";
+  }
+};
+
+function displayQuiz(){
+  const currentQuiz=quizData[currentStep];
+
+  qNumber.textContent=`第${currentStep+1}問`
+  qText.textContent=currentQuiz.question;
+  correctAnswer(currentQuiz.correct);
+  aText.textContent=currentQuiz.description;
+}
+displayQuiz();
+
+document.getElementById("true-btn").addEventListener("click", ()=>{
+  checkAnswer(true);
+});
+document.getElementById("false-btn").addEventListener("click", ()=>{
+  checkAnswer(false);
+});
+
+function checkAnswer(userChoice){
+  const currentQuiz=quizData[currentStep];
+
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("answer").classList.remove("hidden");
+  if(userChoice===currentQuiz.correct){
+    judge.textContent="正解！";
+  }else{
+    judge.textContent="残念…";
+  }
+}
 
 
 /*

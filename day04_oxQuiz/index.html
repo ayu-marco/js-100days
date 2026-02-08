@@ -9,28 +9,33 @@
     <div id="start-screen" class="screen hidden">
 
     </div>
+
     <div id="quiz-screen" class="screen">
-      <div class="text-box">
-        <div class="quiz-text">
-        <h2 class="quiz-number">第１問</h2>
-        <p></p>
+
+      <div id="quiz">
+
+        <div class="text-box">
+
+          <h2 id="quiz-number">第１問</h2>
+          <p id="quiz-question"></p>
         </div>
-        <div class="answer-text">
-          <h2></h2>
-          <p></p>
+        <div class="btn-box">
+          <button id="true-btn">o</button>
+          <button id="false-btn">x</button>
+        </div>
+      </div>      
+        
+      <div id="answer" class="hidden">
+        <div class="text-box">
+          <h1 id="judge"></h1>
+          <h2 id="answer-correct"></h2>
+          <p id="answer-comment"></p>
+        </div>
+        <div class="btn-box">
+          <button id="next-btn">=></button>
         </div>
       </div>
-      <div class="btn-box">
-        <div class="option-btn">
 
-        </div>
-        <div class="next-btn">
-
-        </div>
-      </div>
-      <div class="face-box">
-
-      </div>
     </div>
     <div id="result-screen" class="screen hidden">
 

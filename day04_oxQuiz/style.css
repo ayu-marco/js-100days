@@ -1,8 +1,31 @@
-.hidden{
-    display:none;
+.hidden {
+  display: none;
 }
 
-
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.quiz-screen {
+  position: relative;
+}
+.text-box {
+  width: 60%;
+  height: 300px;
+  border: 2px solid black;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+.btn-box {
+  width: 30%;
+  height: 200px;
+  border: 2px solid black;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
 
 /*
 body{
