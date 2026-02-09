@@ -1,0 +1,70 @@
+.hidden {
+  display: none;
+}
+
+body {
+    font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック";
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.start h1{
+    text-align: center;
+}
+
+
+.quiz-screen {
+  position: relative;
+}
+.text-box {
+    box-sizing: border-box;
+  width: 60%;
+  height: 300px;
+  border: 2px solid black;
+  position: absolute;
+  bottom: 60px;
+  left: 3%;
+  z-index: 10;
+  background-color: rgb(255,255,255,0.8);
+  padding: 30px;
+}
+.text-box p{
+    font-size: 24px;
+}
+.btn-box {
+  width: 30%;
+  height: 60px;
+  border: 2px solid black;
+  position: absolute;
+  bottom: 60px;
+  right: 3%;
+}
+
+.ox {
+  width: 45%;
+  height: 60px;
+  font-size: 40px;
+  border-radius: 5px;
+}
+.next{
+    width: 90%;
+  height: 60px;
+  font-size: 30px;
+  border-radius: 5px;
+}
+
+.face img {
+  width: 400px;
+  height: auto;
+  position: absolute;
+  bottom: 130px;
+  right: 3%;
+}
+.enemy img{
+    width: auto;
+    height: 600px;
+    position: absolute;
+    bottom: 350px;
+    left: 300px;
+    z-index: 1;
+}
