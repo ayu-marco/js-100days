@@ -62,14 +62,17 @@ const shuffleBtn = document.getElementById("shuffle");
 board.innerHTML = "";
 let currentMode = "upper";
 let letters = [...wordData[currentMode]];
+let statusList=new Array(26).fill(false);
+
 
 function shuffleLetters() {
   board.innerHTML = "";
   for (let i = letters.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [letters[i], letters[j]] = [letters[j], letters[i]];
+    [statusList[i],statusList[j]]=[statusList[j],statusList[i]];
   }
-}
+};
 function renderBoard() {
   board.innerHTML = "";
 
@@ -77,9 +80,12 @@ function renderBoard() {
     const cell = document.createElement("div");
     cell.classList.add("cell");
     cell.textContent = letter;
-
+    if(statusList[index]){
+      cell.classList.add("selected");
+    }
     cell.addEventListener("click", () => {
       cell.classList.add("selected");
+      statusList[index]=true;
     });
 
     board.appendChild(cell); //boardの子として追加する
