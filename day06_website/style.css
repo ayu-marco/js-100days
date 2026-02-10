@@ -1,0 +1,81 @@
+.hidden{
+  display: none;
+}
+
+.container {
+  width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.apps{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card{
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fffffe;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.card h3{
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.card p{
+  font-size: 14px;
+  color: #666;
+}
+
+
+.top-wrapper {
+  padding: 180px 0 100px 0;
+  
+  background-size: cover;
+  background-color: #dfe0df;
+  text-align: center;
+}
+
+header {
+  height: 150px;
+  width: 100%;
+  background-color: #fffffe;
+  /* positionプロパティをfixedに、topを0に指定してください */
+  
+  
+}
+
+.logo {
+  width:auto;
+  height: 200px;
+}
+
+.header-left {
+  float: left;
+}
+
+.header-right {
+  float: right;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.5s;
+}
+
+
+.header-right a {
+  line-height: 80px;
+  padding: 0 25px;
+  color: #dfe0df;
+  display: block;
+}
+
+footer{
+    background-color: #705d3f;
+    height: 80px;
+}
