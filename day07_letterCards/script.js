@@ -1,107 +1,51 @@
 const board = document.getElementById("card-board");
 const wordData = {
-  upper: [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z",
-  ],
-  lower: [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ],
+  upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
+  lower: "abcdefghijklmnopqrstuvwxyz".split(""),
 };
+
 const switchBtn = document.getElementById("switch");
 const shuffleBtn = document.getElementById("shuffle");
-board.innerHTML = "";
+//board.innerHTML = "";
 let currentMode = "upper";
-let letters = [...wordData[currentMode]];
+//let letters = [...wordData[currentMode]];
+let indexes=[...Array(26).keys()];
 let statusList=new Array(26).fill(false);
 
-
-function shuffleLetters() {
-  board.innerHTML = "";
-  for (let i = letters.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [letters[i], letters[j]] = [letters[j], letters[i]];
-    [statusList[i],statusList[j]]=[statusList[j],statusList[i]];
-  }
-};
 function renderBoard() {
   board.innerHTML = "";
 
-  letters.forEach((letter, index) => {
+  indexes.forEach((alphabetIndex, arrayindex) => {
     const cell = document.createElement("div");
     cell.classList.add("cell");
-    cell.textContent = letter;
-    if(statusList[index]){
+
+    cell.textContent = wordData[currentMode][alphabetIndex];
+    if(statusList[alphabetIndex]){
       cell.classList.add("selected");
     }
     cell.addEventListener("click", () => {
-      cell.classList.add("selected");
-      statusList[index]=true;
+      
+      statusList[alphabetIndex]=!statusList[alphabetIndex];
+      cell.classList.toggle("selected");
     });
 
     board.appendChild(cell); //boardの子として追加する
   });
 }
+function shuffleLetters() {
+  //board.innerHTML = "";
+  for (let i = indexes.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indexes[i], indexes[j]] = [indexes[j], indexes[i]];
+    //[statusList[i],statusList[j]]=[statusList[j],statusList[i]];
+  }
+};
+
+
 
 switchBtn.addEventListener("click", () => {
-  if (currentMode === "upper") {
-    currentMode = "lower";
-    letters = [...wordData.lower];
-    switchBtn.textContent = "大文字にする";
-  } else {
-    currentMode = "upper";
-    letters = [...wordData.upper];
-    switchBtn.textContent = "小文字にする";
-  }
+  currentMode=currentMode==="upper" ? "lower":"upper";
+  switchBtn.textContent=currentMode==="upper" ? "小文字にする":"大文字にする";
   renderBoard();
 });
 
