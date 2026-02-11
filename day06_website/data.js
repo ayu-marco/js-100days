@@ -31,7 +31,7 @@ export const appList = [
   },
   { 
     title: "並べ替えカード", 
-    desc: "英語の勉強ができます",
+    desc: "",
     link: "https://view.genially.com/69880744dea8f5798eae110d/interactive-content-",
     image: "images/並べ替えカード.png"
   }
