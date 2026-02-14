@@ -6,6 +6,7 @@ const wordData = {
 
 const switchBtn = document.getElementById("switch");
 const shuffleBtn = document.getElementById("shuffle");
+const orderBtn=document.getElementById("order");
 
 let currentMode = "upper";//大文字モード
 
@@ -43,7 +44,11 @@ function shuffleLetters() {
     [indexes[i], indexes[j]] = [indexes[j], indexes[i]];
   }
 };
-
+function orderLetters(){
+  for (let i=0; i<indexes.length; i++){
+    indexes[i]=i;
+  }
+};
 
 
 switchBtn.addEventListener("click", () => {
@@ -62,5 +67,10 @@ shuffleBtn.addEventListener("click", () => {
   renderBoard();
 });
 
-shuffleLetters();
+orderBtn.addEventListener("click", ()=>{
+  orderLetters();
+  renderBoard();
+})
+
+//shuffleLetters();
 renderBoard();
